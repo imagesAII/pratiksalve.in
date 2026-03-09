@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Page Not Found | Your Name</title>
+  <meta name="description" content="Oops — this page does not exist."/>
+  <meta name="robots" content="noindex"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#00c4a0"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    body { display:flex; align-items:center; justify-content:center; min-height:100vh; overflow:hidden; }
+    .wrap { text-align:center; padding:40px; position:relative; z-index:2; }
+    .bg-404 {
+      position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+      font-family:'Barlow Condensed',sans-serif; font-weight:900;
+      font-size:clamp(220px,40vw,520px); letter-spacing:-0.05em;
+      color:rgba(255,255,255,0.03); user-select:none; pointer-events:none;
+      animation:drift 12s ease-in-out infinite alternate;
+    }
+    @keyframes drift{from{transform:translateY(-2%);}to{transform:translateY(2%);}}
+    .err-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:20px;animation:fadeUp 0.6s ease 0.2s both;}
+    .err-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(64px,12vw,140px);line-height:0.88;text-transform:uppercase;letter-spacing:-0.03em;color:#fff;margin-bottom:24px;animation:fadeUp 0.7s ease 0.3s both;}
+    .err-title span{color:var(--teal);}
+    .err-msg{font-family:'Lora',serif;font-size:18px;color:rgba(245,245,240,0.55);line-height:1.65;max-width:460px;margin:0 auto 40px;animation:fadeUp 0.7s ease 0.45s both;}
+    .err-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s ease 0.6s both;}
+    .glitch{animation:glitch 3s infinite;}
+    @keyframes glitch{0%,90%,100%{text-shadow:none;}92%{text-shadow:3px 0 var(--teal),-3px 0 rgba(232,64,28,0.8);}94%{text-shadow:-3px 0 var(--teal),3px 0 rgba(232,64,28,0.8);}96%{text-shadow:2px 0 var(--teal),-2px 0 rgba(232,64,28,0.8);}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo">YOUR<span>.</span>NAME</div>
+    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+  </div>
+</div>
+<div id="scrollProgress"></div>
+<button id="backToTop" title="Back to top">↑</button>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu">
+  <div class="mobile-panel">
+    <button class="mobile-close" id="menuClose">✕</button>
+    <a class="mobile-panel-logo" href="index.html">YOUR<span>.</span>NAME</a>
+    <ul class="mobile-links">
+      <li><a href="index.html">Home <span>→</span></a></li>
+      <li><a href="education.html">Education <span>→</span></a></li>
+      <li><a href="projects.html">Projects <span>→</span></a></li>
+      <li><a href="certifications.html">Certifications <span>→</span></a></li>
+      <li><a href="contact.html">Contact <span>→</span></a></li>
+    </ul>
+    <div class="mobile-footer">© 2026 Your Name</div>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+<div class="page-transition"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html"><span>//</span>YN</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button id="themeToggle" title="Toggle theme">☀️</button>
+  <a class="nav-cta btn-magnetic" href="index.html">← Home</a>
+  <button id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="bg-404">404</div>
+<div class="wrap">
+  <div class="err-label">Error 404</div>
+  <div class="err-title"><span class="glitch">Page</span><br>Not Found</div>
+  <p class="err-msg">Looks like this page took a wrong turn. It might have been moved, deleted, or never existed.</p>
+  <div class="err-actions">
+    <a href="index.html" class="btn btn-teal btn-magnetic">← Go Home</a>
+    <a href="projects.html" class="btn btn-outline btn-magnetic">View Projects</a>
+    <a href="contact.html" class="btn btn-outline btn-magnetic">Contact Me</a>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>

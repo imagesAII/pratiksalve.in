@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://imagesAII.github.io/sitemap.xml
